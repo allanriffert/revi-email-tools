@@ -133,13 +133,8 @@
                     "url": "https://placehold.co/480x120/1a1718/ffb7b2/png?text=SUA+MARCA"
                   },
                   "previewDark": false,
-                  "link": {
-                    "name": "web",
-                    "values": {
-                      "href": "https://exemplo.com",
-                      "target": "_blank"
-                    }
-                  },
+                  "linkUrl": "https://exemplo.com",
+                  "linkNovaAba": true,
                   "altText": "Sua marca",
                   "textAlign": "center",
                   "containerPadding": "20px 16px 10px 16px",

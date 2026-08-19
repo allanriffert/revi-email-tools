@@ -170,17 +170,24 @@
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  // O widget 'link' devolve {name, values:{href, target}}; aceita string tambem.
-  function acao(v) {
-    if (!v) return null;
-    if (typeof v === 'string') {
-      const u = v.trim();
-      return u ? { href: u, target: '_blank' } : null;
+  // Lê a URL de um campo de texto simples. O widget 'link' do Unlayer guarda o valor
+  // no design mas NÃO o repassa ao exporter, então a URL fica num campo 'text'.
+  // O formato de objeto continua aceito, caso o valor venha de um design antigo.
+  function acao(values) {
+    let bruto = values.linkUrl;
+    if (bruto == null || bruto === '') bruto = values.link;
+    if (!bruto) return null;
+    let href;
+    if (typeof bruto === 'string') {
+      href = bruto;
+    } else {
+      const vals = bruto.values || bruto;
+      href = vals.href;
     }
-    const vals = v.values || v;
-    const href = (vals.href || '').trim();
+    href = (href || '').trim();
     if (!href) return null;
-    return { href: href, target: vals.target || '_blank' };
+    const novaAba = values.linkNovaAba !== false;
+    return { href: href, target: novaAba ? '_blank' : '_self' };
   }
 
   function themeImageHtml(values) {
@@ -195,7 +202,7 @@
     const padding = esc(values.containerPadding || '0px');
     const maxWidth = esc(values.maxWidth || '600');
     const comum = 'width:100%;height:auto;max-width:'+maxWidth+'px;border:0;outline:none;text-decoration:none;';
-    const a = acao(values.link);
+    const a = acao(values);
 
     // <a> por imagem: quando a img está display:none o link colapsa,
     // então não sobra área clicável invisível no modo errado.
@@ -226,7 +233,8 @@
         previewDark: { label: 'Prever a versão escura', defaultValue: false, widget: 'toggle' }
       }},
       acao: { title: 'Ação', position: 2, collapsed: false, options: {
-        link: { label: 'Link ao clicar', defaultValue: { name: 'web', values: { href: '', target: '_blank' } }, widget: 'link' }
+        linkUrl: { label: 'Link ao clicar (URL)', defaultValue: '', widget: 'text' },
+        linkNovaAba: { label: 'Abrir em nova aba', defaultValue: true, widget: 'toggle' }
       }},
       aparencia: { title: 'Aparência', position: 3, collapsed: true, options: {
         altText: { label: 'Texto alternativo', defaultValue: '', widget: 'text' },
@@ -237,7 +245,7 @@
     },
     values: {
       lightImage: { url: '' }, darkImage: { url: '' }, previewDark: false,
-      link: { name: 'web', values: { href: '', target: '_blank' } },
+      linkUrl: '', linkNovaAba: true,
       altText: '', textAlign: 'center', containerPadding: '0px', maxWidth: '600'
     },
     renderer: {
@@ -248,7 +256,7 @@
           const src = values.previewDark && dark ? dark : light;
           const modo = values.previewDark && dark ? 'Escuro' : 'Claro';
           if (!src) return '<div style="padding:20px;border:2px dashed #ccc;text-align:center;font-family:Arial,sans-serif;">Escolha uma imagem</div>';
-          const a = acao(values.link);
+          const a = acao(values);
           return '<div style="padding:'+esc(values.containerPadding||'0px')+';text-align:'+esc(values.textAlign||'center')+';">'
             + '<div style="font:11px Arial,sans-serif;color:#777;margin-bottom:4px;">Prévia: '+modo
             +   (a ? ' &middot; com link' : ' &middot; sem link') + '</div>'
