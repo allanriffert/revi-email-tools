@@ -1,67 +1,138 @@
 # revi-email-tools
 
-Custom tools do editor de e-mail (Unlayer) usados pela Revi.
+Custom tools de dark mode para o editor de e-mail **Unlayer**.
 
-- `revi-theme-tools.js` — **v2.** Registra `revi_theme` (paleta clara e escura definida por
-  color pickers, dentro do design) e `revi_theme_image` (imagem alternativa para dark mode,
-  com link opcional).
-- `revi-dark-mode-tools.js` — v1. Registra `revi_dark_mode` (pares de tema light/dark a partir
-  de grupos fixos no próprio arquivo) e `revi_theme_image` (sem link).
+Dois blocos: um define a paleta clara e escura do template, outro troca a imagem
+conforme o modo. As cores ficam no design — não no código.
 
-As duas versões usam os mesmos nomes de classe (`revi-dm-*`), então blocos já marcados
-continuam funcionando ao migrar.
+| | |
+|---|---|
+| ![claro](img/04-claro.png) | ![escuro](img/05-escuro.png) |
 
-## Uso
+---
+
+# Para o dev — instalação
+
+## 1. Carregue o script
 
 ```js
 unlayer.init({
   id: 'editor',
   displayMode: 'email',
   customJS: [
-    'https://allanriffert.github.io/revi-email-tools/revi-theme-tools.js'
+    'https://cdn.jsdelivr.net/gh/allanriffert/revi-email-tools@main/revi-theme-tools.js'
   ]
 });
 ```
 
-No design, o bloco precisa ser `type: "custom"` com o nome do tool em `slug`
-(`revi_theme` ou `revi_theme_image`). Usar o nome direto em `type` faz o Unlayer
-renderizar o bloco como "Missing" e o CSS não é injetado.
+Para não depender de cache, fixe um commit no lugar de `@main`:
+`@<sha>/revi-theme-tools.js`.
 
-## v1 vs v2
+## 2. Carregue o template base
 
-| | v1 | v2 |
-|---|---|---|
-| onde as cores vivem | `const GROUPS` no `.js` | no design, via color pickers |
-| trocar paleta | editar o script e publicar | abrir o bloco e clicar nas cores |
-| modo claro | não gera CSS | gera CSS, igual ao escuro |
-| paletas por template | uma só, global | uma por design |
-| desligar o escuro | não dá | toggle no bloco |
-| link na imagem | não | campo de ação |
+```js
+fetch('https://cdn.jsdelivr.net/gh/allanriffert/revi-email-tools@main/template-base.json')
+  .then(r => r.json())
+  .then(design => unlayer.loadDesign(design));
+```
 
-## Marcação
+Feito isso, os blocos aparecem na paleta e o template abre pronto:
 
-As classes aplicadas nos blocos do template:
+![editor](img/01-editor.png)
 
-`revi-dm-bg`, `revi-dm-surface`, `revi-dm-surface-soft`, `revi-dm-surface-accent`,
-`revi-dm-surface-strong`, `revi-dm-heading`, `revi-dm-text`, `revi-dm-menu`,
-`revi-dm-link`, `revi-dm-button`, `revi-dm-border-accent`, `revi-dm-border-strong`,
-`revi-dm-divider`.
+## 3. Se for montar o design por JSON
 
-Toda superfície precisa de uma classe de texto junto: `revi-dm-surface` sozinha troca o
-fundo e deixa o texto na cor original — preto no preto.
+Os blocos custom usam `type: "custom"` + `slug`:
 
-## Verificado no editor
+```json
+{ "type": "custom", "slug": "revi_theme", "values": { ... } }
+```
 
-Carregado no Unlayer Playground (editor 1.472.0) a partir deste branch: os dois tools
-aparecem na paleta, o bloco é criado como `type: "custom"` + `slug` sem virar "Missing",
-os color pickers renderizam nas 5 seções, o `usageLimit` é respeitado e o `color_picker`
-devolve string hex. Exportando, o CSS sai com regra base clara + media query escuro,
-usando as cores definidas no design.
+Usar o nome do tool direto em `type` faz o Unlayer renderizar o bloco como
+**"Missing"** e o CSS não é injetado — sem erro no console.
 
-## Limitações conhecidas
+---
 
-- O export do Unlayer **descarta as regras `[data-ogsc]`** (fallback do Outlook): o seletor
-  não casa com nenhum elemento no HTML exportado e o purge de CSS o remove. Na prática o
-  modo escuro chega por `prefers-color-scheme`.
+# Para quem monta o e-mail
+
+## 1. Bloco "Tema (cores)"
+
+Um por template. É ele que injeta o CSS — sem ele nada muda de cor.
+Não aparece no e-mail, só no editor.
+
+12 cores para o modo claro e 12 para o escuro, em quatro seções.
+A prévia no bloco mostra os dois lados:
+
+![cores](img/02-cores.png)
+
+Em "Geral" há o toggle **Aplicar modo escuro**, para desligar o escuro no template.
+
+## 2. Bloco "Theme Image"
+
+Uma arte para cada modo. As duas vão no HTML; o CSS decide qual aparece.
+Em **Ação**, um link opcional torna a imagem clicável.
+
+![imagem](img/03-imagem.png)
+
+## 3. Marque os blocos
+
+O tema só age em blocos marcados. No painel do bloco, em **CSS class names**,
+use as classes abaixo.
+
+| classe | efeito |
+|---|---|
+| `revi-dm-bg` | fundo geral + cor do texto |
+| `revi-dm-surface` | fundo do bloco |
+| `revi-dm-surface-soft` | fundo suave (avisos, cupons) |
+| `revi-dm-surface-accent` | fundo de destaque |
+| `revi-dm-surface-strong` | fundo forte |
+| `revi-dm-heading` | cor de título (h1, h2, h3) |
+| `revi-dm-text` | cor do texto (p, span) |
+| `revi-dm-menu` | cor dos links de menu |
+| `revi-dm-link` | cor dos links |
+| `revi-dm-button` | fundo e texto do botão |
+| `revi-dm-border-accent` | cor da borda |
+| `revi-dm-border-strong` | cor da borda forte |
+| `revi-dm-divider` | cor do divisor |
+
+**Toda superfície precisa de uma classe de texto junto.** `revi-dm-surface`
+sozinha troca o fundo e deixa o texto na cor original — preto no preto.
+Use `revi-dm-surface revi-dm-text`.
+
+**Não defina cor no bloco.** Cor fixa no HTML vence no modo claro e briga com o tema.
+Deixe a cor para o bloco Tema.
+
+## 4. Confira no e-mail exportado, não no editor
+
+O editor não renderiza o `<body>` do e-mail, então o fundo aparece cinza no canvas
+mesmo estando correto. Use **Export HTML** e abra o arquivo alternando o modo do sistema.
+
+---
+
+# Limitações
+
+- **Gmail** ignora `prefers-color-scheme` e aplica inversão própria. Não há controle.
+- **Outlook**: o fallback `[data-ogsc]` é gerado mas o export do Unlayer o descarta —
+  o seletor não casa com nada no HTML e o purge de CSS o remove.
 - O Unlayer só mantém no CSS as regras cujas classes aparecem no HTML.
-- O Gmail ignora `prefers-color-scheme` e aplica inversão própria.
+
+Cobertura real: Apple Mail, iOS Mail e Outlook para Mac, via `prefers-color-scheme`.
+
+---
+
+# Arquivos
+
+| arquivo | o que é |
+|---|---|
+| `revi-theme-tools.js` | os dois blocos (v2) |
+| `template-base.json` | template inicial, pronto para `loadDesign` |
+| `exemplo-exportado.html` | e-mail de exemplo já exportado |
+| `revi-dark-mode-tools.js` | v1, com a paleta fixa no código |
+
+## v1 → v2
+
+Mesmos nomes de classe, então blocos marcados continuam funcionando. Ao migrar,
+**remova as cores fixas dos blocos** — na v1 elas eram necessárias para o modo claro,
+na v2 elas atrapalham.
+
+O bloco da v1 (`revi_dark_mode`) não é lido pela v2: troque pelo bloco Tema.
