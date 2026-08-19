@@ -50,6 +50,14 @@ As classes aplicadas nos blocos do template:
 Toda superfície precisa de uma classe de texto junto: `revi-dm-surface` sozinha troca o
 fundo e deixa o texto na cor original — preto no preto.
 
+## Verificado no editor
+
+Carregado no Unlayer Playground (editor 1.472.0) a partir deste branch: os dois tools
+aparecem na paleta, o bloco é criado como `type: "custom"` + `slug` sem virar "Missing",
+os color pickers renderizam nas 5 seções, o `usageLimit` é respeitado e o `color_picker`
+devolve string hex. Exportando, o CSS sai com regra base clara + media query escuro,
+usando as cores definidas no design.
+
 ## Limitações conhecidas
 
 - O export do Unlayer **descarta as regras `[data-ogsc]`** (fallback do Outlook): o seletor
