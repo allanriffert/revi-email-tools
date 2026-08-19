@@ -1,0 +1,637 @@
+{
+  "counters": {
+    "u_row": 7,
+    "u_column": 7,
+    "u_content_text": 3,
+    "u_content_button": 1,
+    "u_content_divider": 1,
+    "u_content_custom_revi_theme": 1,
+    "u_content_custom_revi_theme_image": 1
+  },
+  "body": {
+    "id": "revi-template-base",
+    "rows": [
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "custom",
+                "slug": "revi_theme",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "containerPadding": "10px",
+                  "aplicarDark": true,
+                  "_meta": {
+                    "htmlID": "u_content_custom_revi_theme_1",
+                    "htmlClassNames": "u_content_custom_revi_theme"
+                  },
+                  "light_background": "#e7e7e7",
+                  "light_surface": "#fffefe",
+                  "light_surfaceSoft": "#ffecec",
+                  "light_surfaceAccent": "#ffc1c2",
+                  "light_surfaceStrong": "#ffb3b4",
+                  "light_heading": "#6d0b01",
+                  "light_text": "#000000",
+                  "light_link": "#e03e2d",
+                  "light_buttonBg": "#ffecec",
+                  "light_buttonText": "#6d0b01",
+                  "light_border": "#ffc1c2",
+                  "light_borderStrong": "#ffb3b4",
+                  "dark_background": "#121214",
+                  "dark_surface": "#1a1718",
+                  "dark_surfaceSoft": "#251719",
+                  "dark_surfaceAccent": "#3a2023",
+                  "dark_surfaceStrong": "#4a2529",
+                  "dark_heading": "#ffb7b2",
+                  "dark_text": "#f5f5f5",
+                  "dark_link": "#ff8d80",
+                  "dark_buttonBg": "#5c2b30",
+                  "dark_buttonText": "#fff7f7",
+                  "dark_border": "#513034",
+                  "dark_borderStrong": "#6a383d"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_1",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_1",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "custom",
+                "slug": "revi_theme_image",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "lightImage": {
+                    "url": "https://placehold.co/480x120/fffefe/6d0b01/png?text=SUA+MARCA"
+                  },
+                  "darkImage": {
+                    "url": "https://placehold.co/480x120/1a1718/ffb7b2/png?text=SUA+MARCA"
+                  },
+                  "previewDark": false,
+                  "link": {
+                    "name": "web",
+                    "values": {
+                      "href": "https://exemplo.com",
+                      "target": "_blank"
+                    }
+                  },
+                  "altText": "Sua marca",
+                  "textAlign": "center",
+                  "containerPadding": "20px 16px 10px 16px",
+                  "maxWidth": "240",
+                  "_meta": {
+                    "htmlID": "u_content_custom_revi_theme_image_1",
+                    "htmlClassNames": "u_content_custom_revi_theme_image"
+                  }
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_2",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_2",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "text",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "containerPadding": "16px",
+                  "fontSize": "14px",
+                  "textAlign": "left",
+                  "lineHeight": "160%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#e03e2d",
+                    "linkHoverColor": "#e03e2d",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "_meta": {
+                    "htmlID": "u_content_text_1",
+                    "htmlClassNames": "u_content_text revi-dm-heading revi-dm-text"
+                  },
+                  "text": "<h1 style=\"margin:0 0 10px 0;font-size:26px;line-height:1.25;font-family:arial,helvetica,sans-serif;\">Um título que muda de cor sozinho</h1><p style=\"margin:0;font-family:arial,helvetica,sans-serif;\">Este parágrafo não tem cor no HTML. Quem define a cor é o bloco <strong>Tema (cores)</strong> — nos dois modos.</p>"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_3",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_3",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "button",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "href": {
+                    "name": "web",
+                    "values": {
+                      "href": "https://exemplo.com",
+                      "target": "_blank"
+                    }
+                  },
+                  "buttonColors": {
+                    "color": "#000000",
+                    "backgroundColor": "#eeeeee",
+                    "hoverColor": "#000000",
+                    "hoverBackgroundColor": "#dddddd"
+                  },
+                  "size": {
+                    "autoWidth": true,
+                    "width": "100%"
+                  },
+                  "fontSize": "15px",
+                  "lineHeight": "120%",
+                  "textAlign": "center",
+                  "padding": "14px 32px",
+                  "border": {},
+                  "borderRadius": "4px",
+                  "containerPadding": "10px 16px 20px 16px",
+                  "_meta": {
+                    "htmlID": "u_content_button_1",
+                    "htmlClassNames": "u_content_button revi-dm-button"
+                  },
+                  "text": "<span style=\"line-height:18px;\"><strong>Ver a oferta</strong></span>"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_4",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_4",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "divider",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "width": "100%",
+                  "border": {
+                    "borderTopWidth": "1px",
+                    "borderTopStyle": "solid",
+                    "borderTopColor": "#dddddd"
+                  },
+                  "textAlign": "center",
+                  "containerPadding": "0px 16px",
+                  "_meta": {
+                    "htmlID": "u_content_divider_1",
+                    "htmlClassNames": "u_content_divider revi-dm-divider"
+                  }
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_5",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_5",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "text",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "containerPadding": "16px",
+                  "fontSize": "14px",
+                  "textAlign": "left",
+                  "lineHeight": "160%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#e03e2d",
+                    "linkHoverColor": "#e03e2d",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "_meta": {
+                    "htmlID": "u_content_text_2",
+                    "htmlClassNames": "u_content_text revi-dm-surface-soft revi-dm-text"
+                  },
+                  "text": "<p style=\"margin:0;font-size:13px;font-family:arial,helvetica,sans-serif;\"><strong>Bloco de destaque.</strong> Este usa a superfície suave — bom para avisos, cupons ou recados curtos.</p>"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_6",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_6",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      },
+      {
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "contents": [
+              {
+                "type": "text",
+                "values": {
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "locked": false,
+                  "_styleGuide": null,
+                  "anchor": "",
+                  "containerPadding": "20px 16px 28px 16px",
+                  "fontSize": "14px",
+                  "textAlign": "left",
+                  "lineHeight": "160%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#e03e2d",
+                    "linkHoverColor": "#e03e2d",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "_meta": {
+                    "htmlID": "u_content_text_3",
+                    "htmlClassNames": "u_content_text revi-dm-text revi-dm-link"
+                  },
+                  "text": "<p style=\"margin:0 0 6px 0;font-size:12px;font-family:arial,helvetica,sans-serif;\" class=\"rodape\">Você recebe este e-mail porque se cadastrou na nossa lista.</p><p style=\"margin:0;font-size:12px;font-family:arial,helvetica,sans-serif;\"><a href=\"https://exemplo.com\">Descadastrar</a> &nbsp;&middot;&nbsp; <a href=\"https://exemplo.com\">Preferências</a></p>"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_7",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideDesktop": false,
+          "displayCondition": null,
+          "locked": false,
+          "_styleGuide": null,
+          "anchor": "",
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "_meta": {
+            "htmlID": "u_row_7",
+            "htmlClassNames": "u_row revi-dm-surface"
+          }
+        }
+      }
+    ],
+    "headers": [],
+    "footers": [],
+    "values": {
+      "popupPosition": "center",
+      "popupWidth": "600px",
+      "popupHeight": "auto",
+      "borderRadius": "10px",
+      "contentAlign": "center",
+      "contentVerticalAlign": "center",
+      "contentWidth": "600px",
+      "fontFamily": {
+        "label": "Arial",
+        "value": "arial,helvetica,sans-serif"
+      },
+      "textColor": "#000000",
+      "backgroundColor": "",
+      "backgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "custom",
+        "position": "center"
+      },
+      "preheaderText": "",
+      "linkStyle": {
+        "body": true,
+        "linkColor": "#e03e2d",
+        "linkHoverColor": "#e03e2d",
+        "linkUnderline": true,
+        "linkHoverUnderline": true
+      },
+      "_meta": {
+        "htmlID": "u_body",
+        "htmlClassNames": "u_body revi-dm-surface"
+      }
+    }
+  },
+  "schemaVersion": 26
+}
